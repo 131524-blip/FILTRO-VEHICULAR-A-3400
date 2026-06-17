@@ -1,0 +1,657 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FILTRADO VEHICULAR PRO</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="app-container">
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+
+        <div class="logo">
+            <h2>FILTRO VEHICULAR A 3400</h2>
+            <span>PROFESSIONAL EDITION</span>
+        </div>
+
+        <nav class="menu">
+
+            <button class="menu-btn active" data-section="vehiculo">
+                🚗 Datos del Vehículo
+            </button>
+
+            <button class="menu-btn" data-section="consultas">
+                🔎 Consultas Oficiales
+            </button>
+
+            <button class="menu-btn" data-section="riesgo">
+                ⚠️ Riesgo de Compra
+            </button>
+
+            <button class="menu-btn" data-section="historial">
+                📂 Historial
+            </button>
+
+            <button class="menu-btn" data-section="estadisticas">
+                📊 Estadísticas
+            </button>
+
+        </nav>
+
+    </aside>
+
+    <!-- CONTENIDO PRINCIPAL -->
+    <main class="main-content">
+
+        <!-- HEADER -->
+        <header class="topbar">
+
+            <div class="header-left">
+                <h1>FILTRO VEHICULAR A 3400</h1>
+                <span>Sistema Profesional de Evaluación Vehicular</span>
+            </div>
+
+            <div class="header-right">
+
+                <div class="codigo-box">
+                    <label>Código:</label>
+                    <input type="text" id="codigoInforme" readonly>
+                </div>
+
+                <div class="fecha-box">
+                    <label>Fecha:</label>
+                    <input type="text" id="fechaActual" readonly>
+                </div>
+
+            </div>
+
+        </header>
+
+        <!-- ========================= -->
+        <!-- DATOS DEL VEHICULO -->
+        <!-- ========================= -->
+
+        <section id="vehiculo" class="content-section active">
+
+            <div class="section-title">
+                <h2>🚗 DATOS DEL VEHÍCULO</h2>
+            </div>
+
+            <div class="vehicle-form">
+
+                <div class="form-grid">
+
+                    <div class="form-group">
+                        <label>Placa</label>
+                        <input type="text" id="placa">
+                    </div>
+
+                    <div class="form-group">
+                        <label>Marca</label>
+                        <input type="text" id="marca">
+                    </div>
+
+                    <div class="form-group">
+                        <label>Modelo</label>
+                        <input type="text" id="modelo">
+                    </div>
+
+                    <div class="form-group">
+                        <label>Versión</label>
+                        <input type="text" id="version">
+                    </div>
+
+                    <div class="form-group">
+                        <label>Año Fabricación</label>
+                        <input type="number" id="anioFab">
+                    </div>
+
+                    <div class="form-group">
+                        <label>Año Modelo</label>
+                        <input type="number" id="anioModelo">
+                    </div>
+
+                    <div class="form-group">
+                        <label>Color</label>
+                        <input type="text" id="color">
+                    </div>
+
+                    <div class="form-group">
+                        <label>Transmisión</label>
+                        <select id="transmision">
+                            <option>Automática</option>
+                            <option>Mecánica</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Combustible</label>
+                        <select id="combustible">
+                            <option>Gasolina</option>
+                            <option>Diesel</option>
+                            <option>GLP</option>
+                            <option>GNV</option>
+                            <option>Híbrido</option>
+                            <option>Eléctrico</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Ubicación</label>
+                        <input type="text" id="ubicacion">
+                    </div>
+
+                    <div class="form-group">
+                        <label>Kilometraje</label>
+                        <input type="number" id="kilometraje">
+                    </div>
+
+                    <div class="form-group">
+                        <label>Número de Dueños</label>
+                        <input type="number" id="duenos">
+                    </div>
+
+                    <div class="form-group">
+                        <label>Deuda Papeletas</label>
+                        <input type="text" id="deudaPapeletas">
+                    </div>
+
+                    <div class="form-group">
+                        <label>Deuda Impuesto</label>
+                        <input type="text" id="deudaImpuesto">
+                    </div>
+
+                    <div class="form-group">
+                        <label>SOAT</label>
+                        <select id="soat">
+                            <option>Vigente</option>
+                            <option>Vencido</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Revisión Técnica</label>
+                        <select id="revision">
+                            <option>Vigente</option>
+                            <option>Vencida</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Orden de Captura</label>
+                        <select id="captura">
+                            <option>No</option>
+                            <option>Sí</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Garantía Mobiliaria</label>
+                        <select id="garantia">
+                            <option>No</option>
+                            <option>Sí</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Siniestro</label>
+                        <select id="siniestro">
+                            <option>No</option>
+                            <option>Sí</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Gas Vehicular</label>
+                        <select id="gas">
+                            <option>No</option>
+                            <option>GLP</option>
+                            <option>GNV</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Costo Referencial</label>
+                        <input type="text" id="precio">
+                    </div>
+                  <div class="form-group">
+
+    <label>Observaciones del Diagnóstico</label>
+
+    <textarea
+        id="observaciones"
+        rows="6"
+        placeholder="Escriba observaciones del vehículo..."
+    ></textarea>
+
+</div>
+
+<div class="form-group">
+
+    <label>Capturas de Pantalla</label>
+
+    <input
+        type="file"
+        id="imagenesDiagnostico"
+        multiple
+        accept="image/*"
+    >
+  <p id="contadorImagenes">
+0 imágenes seleccionadas
+</p>
+
+</div>
+
+<div id="previewImagenes"></div>
+
+                </div>
+
+                <!-- BOTONES -->
+                <div class="action-buttons">
+
+                   
+
+                    <button id="btnGuardarInforme">
+                        Guardar Informe
+                    </button>
+
+                    <button id="btnLimpiar">
+                        Limpiar
+                    </button>
+
+                    <button id="btnPDF">
+                        Generar PDF
+                    </button>
+
+                    <button id="btnEliminarHistorial">
+                        Eliminar Historial
+                    </button>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- ========================= -->
+        <!-- CONSULTAS OFICIALES -->
+        <!-- ========================= -->
+
+        <section id="consultas" class="content-section">
+
+            <div class="section-title">
+                <h2>🔎 CONSULTAS OFICIALES</h2>
+            </div>
+
+            <div class="tabs-container">
+
+                <button class="tab-btn active">SUNARP</button>
+                <button class="tab-btn">DOCUMENTOS</button>
+                <button class="tab-btn">SINIESTROS Y GAS</button>
+                <button class="tab-btn">PAPELETAS</button>
+                <button class="tab-btn">MUNICIPALES</button>
+                <button class="tab-btn">INFORMATIVO</button>
+                <button class="tab-btn">OTRAS CONSULTAS</button>
+
+            </div>
+
+            <div id="linksContainer">
+
+    <!-- SUNARP -->
+
+    <div class="link-category active">
+
+        <h3>📑 DOCUMENTOS SUNARP</h3>
+
+        <div class="links-grid">
+
+            <a href="https://consultavehicular.sunarp.gob.pe/consulta-vehicular/inicio" target="_blank" class="link-card">
+                Origen Registral
+            </a>
+
+            <a href="https://conoce-aqui.sunarp.gob.pe/conoce-aqui/inicio" target="_blank" class="link-card">
+                Historial con DNI
+            </a>
+
+            <a href="https://copialiteral-altoque.sunarp.gob.pe/copialiteral-altoque/#/busqueda/busqueda-partida" target="_blank" class="link-card">
+                Historial con Placa
+            </a>
+
+            <a href="https://sigueloplus.sunarp.gob.pe/siguelo/" target="_blank" class="link-card">
+                Verificación de Título
+            </a>
+
+            <a href="https://alertarobo.sunarp.gob.pe/alerta-robo/inicio" target="_blank" class="link-card">
+                Alerta Robo
+            </a>
+
+            <a href="https://sprl.sunarp.gob.pe/sprl/ingreso" target="_blank" class="link-card">
+                Cuenta SUNARP
+            </a>
+
+            <a href="https://sigm.sunarp.gob.pe/garantias-mobiliarias/inicio" target="_blank" class="link-card">
+                Garantía Mobiliaria
+            </a>
+
+        </div>
+
+    </div>
+
+    <!-- DOCUMENTOS DEL VEHICULO -->
+
+    <div class="link-category">
+
+        <h3>🚗 DOCUMENTOS DEL VEHÍCULO</h3>
+
+        <div class="links-grid">
+
+            <a href="https://licencias.mtc.gob.pe/#/index" target="_blank" class="link-card">
+                Licencia de Conductor
+            </a>
+
+            <a href="https://slcp.mtc.gob.pe/" target="_blank" class="link-card">
+                Deudas Licencia
+            </a>
+
+            <a href="https://www.apeseg.org.pe/consultas-soat/" target="_blank" class="link-card">
+                Vigencia SOAT
+            </a>
+
+            <a href="https://rec.mtc.gob.pe/Citv/ArConsultaCitv" target="_blank" class="link-card">
+                Revisión Técnica
+            </a>
+
+            <a href="https://farenet.pe/cronograma/" target="_blank" class="link-card">
+                Próxima Revisión
+            </a>
+
+            <a href="https://www.placas.pe/#/home/verificarEstadoPlaca" target="_blank" class="link-card">
+                Estado de Placa
+            </a>
+
+        </div>
+
+    </div>
+
+    <!-- SINIESTROS -->
+
+    <div class="link-category">
+
+        <h3>🚨 SINIESTROS Y GAS VEHICULAR</h3>
+
+        <div class="links-grid">
+
+            <a href="https://servicios.sbs.gob.pe/reportesoat/" target="_blank" class="link-card">
+                Accidentes
+            </a>
+
+            <a href="https://vh.infogas.com.pe/" target="_blank" class="link-card">
+                Gas Vehicular
+            </a>
+
+            <a href="https://fise.minem.gob.pe:23308/consulta-taller/pages/consultaTaller/inicio" target="_blank" class="link-card">
+                Deudas Gas Vehicular
+            </a>
+
+        </div>
+
+    </div>
+
+    <!-- DEUDAS Y PAPELETAS -->
+
+    <div class="link-category">
+
+        <h3>📋 DEUDAS Y PAPELETAS</h3>
+
+        <div class="links-grid">
+
+            <a href="https://www.sutran.gob.pe/consultas/record-de-infracciones/verifica-tu-infraccion/" target="_blank" class="link-card">
+                Multas SUTRAN
+            </a>
+
+            <a href="https://webexterno.sutran.gob.pe/WebExterno/Pages/frmPapeletasCinemometro.aspx" target="_blank" class="link-card">
+                Fotopapeletas
+            </a>
+
+            <a href="https://pasarela.atu.gob.pe/#" target="_blank" class="link-card">
+                ATU Infracciones
+            </a>
+
+            <a href="https://sistemas.atu.gob.pe/ConsultaVehiculo" target="_blank" class="link-card">
+                Autorización Vehicular
+            </a>
+
+            <a href="https://www.sat.gob.pe/VirtualSAT/principal.aspx?mysession=A5ZhIjtXha72zfFr4QZ50tkmmA4m%2byL59fA0DJGVBAU%3d" target="_blank" class="link-card">
+                SAT Multas
+            </a>
+
+            <a href="https://www.sat.gob.pe/VirtualSAT/modulos/Capturas.aspx" target="_blank" class="link-card">
+                Orden de Captura
+            </a>
+
+        </div>
+
+    </div>
+
+    <!-- MUNICIPALES -->
+
+    <div class="link-category">
+
+        <h3>🏛 CONSULTAS MUNICIPALES</h3>
+
+        <div class="links-grid">
+
+            <a href="https://www.sat.gob.pe/pagosenlinea/" target="_blank" class="link-card">Lima</a>
+
+            <a href="https://pagopapeletascallao.pe/" target="_blank" class="link-card">Callao</a>
+
+            <a href="https://www.satcajamarca.gob.pe/consultas" target="_blank" class="link-card">Cajamarca</a>
+
+            <a href="https://www.muniarequipa.gob.pe/oficina-virtual/c0nInfrPermisos/faltas/papeletas.php" target="_blank" class="link-card">Arequipa</a>
+
+            <a href="https://papeletas.munipuno.gob.pe/" target="_blank" class="link-card">Puno</a>
+
+            <a href="https://satp.gob.pe/sistema-pagos/pasarela" target="_blank" class="link-card">Piura</a>
+
+            <a href="https://virtualsatch.satch.gob.pe/virtualsatch/record_infracciones/buscar_placa_" target="_blank" class="link-card">Chiclayo</a>
+
+            <a href="https://satt.gob.pe/servicios/record-de-infracciones" target="_blank" class="link-card">Trujillo</a>
+
+            <a href="https://cusco.gob.pe/informatica/index.php/" target="_blank" class="link-card">Cusco</a>
+
+            <a href="http://sathuancayo.fortiddns.com:888/VentanillaVirtual/ConsultaPIT.aspx" target="_blank" class="link-card">Huancayo</a>
+
+            <a href="https://www.sat-t.gob.pe/" target="_blank" class="link-card">Tarapoto</a>
+
+            <a href="https://munimdsc.gob.pe/fn/papeletas/" target="_blank" class="link-card">Santiago de Cao</a>
+
+            <a href="https://m.satica.gob.pe/consultaordencaptura.php" target="_blank" class="link-card">Ica</a>
+
+            <a href="https://www.munitacna.gob.pe/pagina/sf/servicios/papeletas" target="_blank" class="link-card">Tacna</a>
+
+            <a href="https://www.munihuanuco.gob.pe/wp-content/servicios/transportes/gt_papeletas.php" target="_blank" class="link-card">Huánuco</a>
+
+            <a href="https://munihuarmey.gob.pe/consultar-papeletas/" target="_blank" class="link-card">Huarmey</a>
+
+        </div>
+
+    </div>
+
+    <!-- INFORMATIVO -->
+
+    <div class="link-category">
+
+        <h3>📘 INFORMATIVO VEHICULAR</h3>
+
+        <div class="links-grid">
+
+            <a href="https://es.scribd.com/document/569886551/SEDES-DE-DIROVE-2" target="_blank" class="link-card">
+                Dirección DIROVE
+            </a>
+
+            <a href="https://www.apeseg.org.pe/lista-referencial-de-precios/" target="_blank" class="link-card">
+                Precios Referenciales
+            </a>
+
+            <a href="https://www.sat.gob.pe/WebSiteV8/Modulos/contenidos/mult_Papeletas_ti_rntv2.aspx" target="_blank" class="link-card">
+                Tabla de Infracciones SAT
+            </a>
+
+        </div>
+
+    </div>
+
+    <!-- OTRAS CONSULTAS -->
+
+    <div class="link-category">
+
+        <h3>🔍 OTRAS CONSULTAS</h3>
+
+        <div class="links-grid">
+
+            <a href="https://sistemas.policia.gob.pe/consultalunas/ConsultarServicioLunas" target="_blank" class="link-card">
+                Lunas Polarizadas
+            </a>
+
+            <a href="https://sistemas1.policia.gob.pe/ConsultaPVR/ConsultarServicio" target="_blank" class="link-card">
+                Requisitoria
+            </a>
+
+            <a href="https://portal.mtc.gob.pe/transportes/terrestre/licencias/info_general_clasificacion_licencias.html" target="_blank" class="link-card">
+                Categorías de Vehículos
+            </a>
+
+        </div>
+
+    </div>
+
+</div>
+
+        </section>
+
+        <!-- ========================= -->
+        <!-- RIESGO DE COMPRA -->
+        <!-- ========================= -->
+
+        <section id="riesgo" class="content-section">
+
+            <div class="section-title">
+                <h2>⚠️ RIESGO DE COMPRA</h2>
+            </div>
+
+            <div class="risk-panel">
+
+                <div class="risk-score">
+                    <h1 id="riskNumber">0</h1>
+                </div>
+
+                <div class="risk-level">
+                    <h2 id="riskText">BAJO</h2>
+                </div>
+
+                <div class="risk-bar">
+                    <div id="riskFill"></div>
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- ========================= -->
+        <!-- HISTORIAL -->
+        <!-- ========================= -->
+
+        <section id="historial" class="content-section">
+
+            <div class="section-title">
+                <h2>📂 HISTORIAL DE INFORMES</h2>
+            </div>
+
+            <div class="search-box">
+
+                <input
+                    type="text"
+                    id="buscarInforme"
+                    placeholder="Buscar por código, placa o marca..."
+                >
+
+            </div>
+
+            <table class="history-table">
+
+                <thead>
+
+                    <tr>
+    <th>Código</th>
+    <th>Placa</th>
+    <th>Marca</th>
+    <th>Fecha</th>
+    <th>Riesgo</th>
+    <th>Acciones</th>
+</tr>
+
+                </thead>
+
+                <tbody id="tablaHistorial">
+
+                </tbody>
+
+            </table>
+
+        </section>
+
+        <!-- ========================= -->
+        <!-- ESTADISTICAS -->
+        <!-- ========================= -->
+
+        <section id="estadisticas" class="content-section">
+
+            <div class="section-title">
+                <h2>📊 ESTADÍSTICAS</h2>
+            </div>
+
+            <div class="stats-grid">
+
+                <div class="stat-card">
+                    <h3>Total Informes</h3>
+                    <span id="totalInformes">0</span>
+                </div>
+
+                <div class="stat-card">
+                    <h3>Riesgo Bajo</h3>
+                    <span id="riesgoBajo">0</span>
+                </div>
+
+                <div class="stat-card">
+                    <h3>Riesgo Medio</h3>
+                    <span id="riesgoMedio">0</span>
+                </div>
+
+                <div class="stat-card">
+                    <h3>Riesgo Alto</h3>
+                    <span id="riesgoAlto">0</span>
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+</div>
+  <!-- jsPDF -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
+<!-- AutoTable -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.8.2/jspdf.plugin.autotable.min.js"></script>
+
+<!-- Tu script -->
+<script src="script.js"></script>
+  </body>
+</html>
+
