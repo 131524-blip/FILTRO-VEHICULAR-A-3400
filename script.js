@@ -1475,24 +1475,50 @@ finalY
 );
 for(const img of imagenesPDF){
 
-    doc.addPage();
+    const image = new Image();
 
-    doc.setFontSize(14);
+    await new Promise((resolve)=>{
 
-    doc.text(
-    "EVIDENCIA FOTOGRAFICA",
-    15,
-    15
+        image.onload = resolve;
+        image.src = img;
+
+    });
+
+    const canvas =
+    document.createElement("canvas");
+
+    canvas.width =
+    image.width;
+
+    canvas.height =
+    image.height;
+
+    const ctx =
+    canvas.getContext("2d");
+
+    ctx.drawImage(
+        image,
+        0,
+        0
     );
 
-    const formato =
-    img.includes("image/png")
-    ? "PNG"
-    : "JPEG";
+    const jpg =
+    canvas.toDataURL(
+        "image/jpeg",
+        0.9
+    );
+
+    doc.addPage();
+
+    doc.text(
+        "EVIDENCIA FOTOGRAFICA",
+        15,
+        15
+    );
 
     doc.addImage(
-        img,
-        formato,
+        jpg,
+        "JPEG",
         10,
         25,
         180,
@@ -1613,6 +1639,11 @@ function importarJSON(event){
 }
 
 
+
+
+
+
+       
 
 
 
