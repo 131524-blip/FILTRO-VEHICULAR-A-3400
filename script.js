@@ -15,6 +15,28 @@ const firebaseConfig = {
 
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
+
+const email = prompt("Correo:");
+const password = prompt("Contraseña:");
+
+signInWithEmailAndPassword(auth, email, password)
+
+.then(() => {
+
+    alert("Acceso correcto");
+
+})
+
+.catch(() => {
+
+    alert("Usuario o contraseña incorrectos");
+
+    document.body.innerHTML =
+    "<h1 style='text-align:center;margin-top:100px'>ACCESO DENEGADO</h1>";
+
+});
+
+/*
 const licencia =
 "FV-A3400-2026";
 
@@ -25,9 +47,8 @@ if(clave !== licencia){
 
     alert("Licencia inválida");
 
-    
-
 }
+*/
 /* =====================================================
    FILTRADO VEHICULAR PRO
    MODULO 4 - JS PARTE 1
