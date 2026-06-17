@@ -1,3 +1,20 @@
+import { initializeApp } from "https://www.gstatic.com/firebasejs/12.15.0/firebase-app.js";
+import {
+ getAuth,
+ signInWithEmailAndPassword
+} from "https://www.gstatic.com/firebasejs/12.15.0/firebase-auth.js";
+
+const firebaseConfig = {
+ apiKey: "AIzaSyCR5ZJaMz0i4WVUP_rhvqoyVSCLC7gxfOM",
+ authDomain: "filtradovehiculara3400.firebaseapp.com",
+ projectId: "filtradovehiculara3400",
+ storageBucket: "filtradovehiculara3400.firebasestorage.app",
+ messagingSenderId: "203568281014",
+ appId: "1:203568281014:web:ba28e32f91b7ab48f07d17"
+};
+
+const app = initializeApp(firebaseConfig);
+const auth = getAuth(app);
 const licencia =
 "FV-A3400-2026";
 
