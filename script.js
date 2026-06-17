@@ -1485,13 +1485,18 @@ for(const img of imagenesPDF){
     15
     );
 
+    const formato =
+    img.includes("image/png")
+    ? "PNG"
+    : "JPEG";
+
     doc.addImage(
-    img,
-    "JPEG",
-    10,
-    25,
-    180,
-    120
+        img,
+        formato,
+        10,
+        25,
+        180,
+        120
     );
 
 }
@@ -1607,6 +1612,12 @@ function importarJSON(event){
 
 }
 
+
+
+
+
+
+       
 
 
 
